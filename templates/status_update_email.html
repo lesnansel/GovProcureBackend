@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .header {
+            background: #0f2942;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .status-approved { background: #dcfce7; color: #166534; }
+        .status-rejected { background: #fee2e2; color: #991b1b; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Procurement Request Update</h2>
+        </div>
+        <div class="content">
+            <p>Hello,</p>
+            <p>Your procurement request (PR #{{ pr_number }}) status has been updated.</p>
+            <p>
+                New Status: 
+                <span class="status status-{{ status.lower() }}">
+                    {{ status }}
+                </span>
+            </p>
+            <p>Please log in to the procurement system for more details.</p>
+            <br>
+            <p>Best regards,<br>Procurement Team</p>
+        </div>
+        <div class="footer">
+            This is an automated message, please do not reply.
+        </div>
+    </div>
+</body>
+</html>
